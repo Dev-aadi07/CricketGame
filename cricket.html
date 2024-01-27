@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="heading">Bat Ball Stump</h1>
+    </header>
+    <main>
+        <button onclick="
+        let compInput = Math.random()*3;
+        
+        let comChoice;
+        if (compInput >0 && compInput <=1){
+            comChoice = 'Bat';
+        } else if (compInput >1 && compInput <=2){
+            comChoice = 'Ball';
+        } else {
+            comChoice = 'Stump';
+        }
+        
+        let resultMsg;
+        if (comChoice === 'Ball'){
+            resultMsg='YOU WON.';
+        } else if (comChoice === 'Stump'){
+            resultMsg='You Lost';
+        } else {
+            resultMsg=`It's a tie`;
+        }
+        alert(`You have chosen Bat. Computer has chosen ${comChoice} and ${resultMsg}`);
+        ">Bat</button>
+
+        <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+        <button onclick="
+        compInput = Math.random()*3;
+        
+        if (compInput >0 && compInput <=1){
+            comChoice = 'Bat';
+        } else if (compInput >1 && compInput <=2){
+            comChoice = 'Ball';
+        } else {
+            comChoice = 'Stump';
+        }
+        resultMsg;
+        if (comChoice === 'Stump'){
+            resultMsg='YOU WON.';
+        } else if (comChoice === 'Bat'){
+            resultMsg='You Lost';
+        } else {
+            resultMsg=`It's a tie`;
+        }
+
+        alert(`You have chosen Ball. Computer has chosen ${comChoice} and ${resultMsg}`);
+        ">Ball</button>
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
+
+        <button onclick="
+        compInput = Math.random()*3;
+        
+        if (compInput >0 && compInput <=1){
+            comChoice = 'Bat';
+        } else if (compInput >1 && compInput <=2){
+            comChoice = 'Ball';
+        } else {
+            comChoice = 'Stump';
+        }
+        if (comChoice === 'Bat'){
+            resultMsg='YOU WON.';
+        } else if (comChoice === 'Ball'){
+            resultMsg='You Lost';
+        } else {
+            resultMsg=`It's a tie`;
+        }
+
+        alert(`You have chosen Stump. Computer has chosen ${comChoice} and ${resultMsg}`);
+        ">Stump</button>
+    </main>
+</body>
+</html>
