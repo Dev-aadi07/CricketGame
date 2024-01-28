@@ -3,6 +3,9 @@ let score = {
     Win: 0,
     Lost: 0,
     Tie: 0,
+    displayScore: function() {
+        return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
+    },
 };
 
 
@@ -60,5 +63,5 @@ function showResult(userMove, compMove, result){
 
     ${result}
     
-    Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie} `);
+    ${score.displayScore()}`);
 }
