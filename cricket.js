@@ -1,11 +1,16 @@
 
-let score = {
-    Win: 0,
-    Lost: 0,
-    Tie: 0,
-    displayScore: function() {
-        return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
-    },
+let scoreStr = localStorage.getItem('Score');
+let score;
+if (scoreStr != undefined){
+    score = JSON.parse(scoreStr);
+} else {
+    score = {   Win: 0,
+                Lost: 0,
+                Tie: 0,}
+};
+
+score.displayScore =function() {
+    return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
 };
 
 
@@ -59,6 +64,8 @@ function getResult(userMove, compMove){
 }
 
 function showResult(userMove, compMove, result){
+    localStorage.setItem('Score',JSON.stringify(score));
+    // localStorage.clear();
     alert(`You have chosen ${userMove}. Computer has chosen ${compMove} 
 
     ${result}
