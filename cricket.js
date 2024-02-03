@@ -7,11 +7,11 @@ resetScore(scoreStr);
 
 function resetScore(scoreStr){
     score = scoreStr ? JSON.parse(scoreStr) : { Win: 0, Lost: 0, Tie: 0};
+    score.displayScore = function() {
+        return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
+    };
+    showResult();
 }
-
-score.displayScore = function() {
-    return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
-};
 
 
 function generateCompChoice(){
@@ -66,9 +66,10 @@ function getResult(userMove, compMove){
 function showResult(userMove, compMove, result){
     localStorage.setItem('Score',JSON.stringify(score));
     // localStorage.clear();
-    alert(`You have chosen ${userMove}. Computer has chosen ${compMove} 
 
-    ${result}
-    
-    ${score.displayScore()}`);
+    document.querySelector('#user-move').innerText = userMove ? `You have chosen ${userMove}` : '';
+    document.querySelector('#computer-move').innerText = compMove ? `You have chosen ${compMove}` : '';
+    document.querySelector('#result').innerText = result ? result : '';
+    document.querySelector('#score').innerText = score.displayScore();
+
 }
