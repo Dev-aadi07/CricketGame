@@ -7,6 +7,9 @@
             text-align: center;
             background-color:brown;
         }
+        body Reset{
+            color: blueviolet;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +40,11 @@
         resultMsg = getResult('Stump', comChoice);
         showResult('Stump',comChoice,resultMsg);
         ">Stump</button>
+
+
+        <button onclick=" localStorage.clear()
+            resetScore();        
+        ">Reset</button>
 
     </main>
 

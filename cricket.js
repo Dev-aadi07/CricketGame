@@ -1,15 +1,15 @@
 
 let scoreStr = localStorage.getItem('Score');
+// let score = JSON.parse(scoreStr) || {Win: 0,Lost: 0,Tie: 0,};
 let score;
-if (scoreStr != undefined){
-    score = JSON.parse(scoreStr);
-} else {
-    score = {   Win: 0,
-                Lost: 0,
-                Tie: 0,}
-};
+resetScore(scoreStr);
 
-score.displayScore =function() {
+
+function resetScore(scoreStr){
+    score = scoreStr ? JSON.parse(scoreStr) : { Win: 0, Lost: 0, Tie: 0};
+}
+
+score.displayScore = function() {
     return `Won: ${score.Win}, Lost: ${score.Lost}, Tie: ${score.Tie}`;
 };
 
